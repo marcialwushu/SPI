@@ -44,6 +44,7 @@ https://www.bcb.gov.br/estabilidadefinanceira/comunicacaodados.
 
 O arquivo compactado segue a estrutura apresentada abaixo:
 
+
 ```
 spi.1.2.zip
 │ Notas de versão.pdf
