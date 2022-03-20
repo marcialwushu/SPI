@@ -3,7 +3,7 @@ name: 'deploy website and ebooks'
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   job_deploy_website:
