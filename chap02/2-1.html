@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>ADMI · GitBook</title>
+        <title>2-1 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="admi.002_SPI_M_msg.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../chap01/XSD.html" />
     
 
     </head>
@@ -109,9 +107,9 @@
         
         
     
-        <li class="chapter active" data-level="2.1" data-path="1-1.html">
+        <li class="chapter " data-level="2.1" data-path="../chap01/1-1.html">
             
-                <a href="1-1.html">
+                <a href="../chap01/1-1.html">
             
                     
                     ADMI
@@ -122,9 +120,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="admi.002_SPI_M_msg.html">
+        <li class="chapter " data-level="2.2" data-path="../chap01/admi.002_SPI_M_msg.html">
             
-                <a href="admi.002_SPI_M_msg.html">
+                <a href="../chap01/admi.002_SPI_M_msg.html">
             
                     
                     ADMI.002_SPI_M
@@ -135,9 +133,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="admi.002_SPI_R_msg.html">
+        <li class="chapter " data-level="2.3" data-path="../chap01/admi.002_SPI_R_msg.html">
             
-                <a href="admi.002_SPI_R_msg.html">
+                <a href="../chap01/admi.002_SPI_R_msg.html">
             
                     
                     ADMI.002_SPI_R
@@ -148,9 +146,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="XSD.html">
+        <li class="chapter " data-level="2.4" data-path="../chap01/XSD.html">
             
-                <a href="XSD.html">
+                <a href="../chap01/XSD.html">
             
                     
                     XSD
@@ -168,9 +166,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../chap02/2-1.html">
+        <li class="chapter active" data-level="3.1" data-path="2-1.html">
             
-                <a href="../chap02/2-1.html">
+                <a href="2-1.html">
             
                     
                     2-1
@@ -211,7 +209,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >ADMI</a>
+        <a href=".." >2-1</a>
     </h1>
 </div>
 
@@ -226,7 +224,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mensagens-de-controle-do-processo-de-comunica&#xE7;&#xE3;o">Mensagens de controle do processo de comunica&#xE7;&#xE3;o</h1>
+                                <h1 id="mensagens-trocadas-com-o-spi-nos-cen&#xE1;rios-de-transfer&#xEA;ncias-de-recursos">Mensagens trocadas com o SPI nos cen&#xE1;rios de transfer&#xEA;ncias de recursos</h1>
 <table>
 <thead>
 <tr>
@@ -237,55 +235,41 @@
 </thead>
 <tbody>
 <tr>
-<td>ADMI.002</td>
+<td>PACS.008</td>
+<td>PSP, SPI</td>
+<td>PSP, SPI</td>
+</tr>
+<tr>
+<td>PACS.002</td>
+<td>PSP, SPI</td>
+<td>PSP, SPI</td>
+</tr>
+<tr>
+<td>PACS.004</td>
 <td>PSP, SPI</td>
 <td>PSP, SPI</td>
 </tr>
 </tbody>
 </table>
-<p>Na ocorr&#xEA;ncia de erros relacionados ao processo de comunica&#xE7;&#xE3;o identificados na camada 
-de mensagem, ser&#xE1; enviada pelo Bacen uma mensagem ADMI.002. Facultativamente, 
-essa mensagem pode ser enviada tamb&#xE9;m pelos demais participantes.</p>
-<p>Enquadram-se nessa categoria, numa rela&#xE7;&#xE3;o n&#xE3;o exaustiva, os seguintes erros:</p>
+<p>No ciclo b&#xE1;sico de uma transfer&#xEA;ncia entre um pagador e um recebedor, s&#xE3;o utilizadas 
+basicamente duas mensagens: PACS.008 e PACS.002, com possibilidade de uso de 
+mensagens ADMI.002 para comunica&#xE7;&#xE3;o de erros n&#xE3;o terminativos, conforme descrito na 
+se&#xE7;&#xE3;o 2.1.</p>
+<p>Por sua vez, na situa&#xE7;&#xE3;o de devolu&#xE7;&#xE3;o de valores, ou seja, quando o usu&#xE1;rio recebedor 
+identifica que a transfer&#xEA;ncia foi realizada de forma indevida e deseja devolver o valor ao 
+pagado, s&#xE3;o utilizadas as mensagens PACS.004 e PACS.002. Da mesma forma descrita no 
+ciclo b&#xE1;sico, a mensagem ADMI.002 &#xE9; usada em erros n&#xE3;o terminativos
+As formas de uso dessas mensagens s&#xE3;o detalhadas no Documento de Especifica&#xE7;&#xF5;es do 
+Ecossistema de Pagamentos Instant&#xE2;neos, n&#xE3;o se&#xE7;&#xF5;es listadas abaixo:</p>
 <ul>
-<li>Erros de sintaxe no XML recebido (ou seja, situa&#xE7;&#xF5;es onde a valida&#xE7;&#xE3;o do XML com base no XSD correspondente apresenta erros);</li>
-<li>Erros na assinatura digital da mensagem;</li>
-<li>Recep&#xE7;&#xE3;o de mensagem com o remetente incorreto;</li>
-<li>Outras situa&#xE7;&#xF5;es.</li>
+<li>1.1 Processo de efetiva&#xE7;&#xE3;o do PIX</li>
+<li>1.3.1. Valida&#xE7;&#xE3;o da mensagem de pagamento pelo SPI</li>
+<li>1.3.2. Saldo insuficiente na Conta PI do PSP do pagador</li>
+<li>1.3.3. Valida&#xE7;&#xF5;es efetuadas pelo PSP do recebedor</li>
+<li>1.3.4. Controle de timeout no SPI</li>
+<li>1.4.2. Devolu&#xE7;&#xE3;o entre participantes diretos</li>
+<li>1.4.3. Devolu&#xE7;&#xE3;o entre participantes indiretos</li>
 </ul>
-<p>A mesma mensagem pode tamb&#xE9;m ser utilizada para comunicar erros que ocorrem no 
-processamento das mensagens, mas sem determinar car&#xE1;ter terminativo na opera&#xE7;&#xE3;o. </p>
-<p>Isso ocorre, por exemplo, no ciclo de liquida&#xE7;&#xE3;o, onde mensagens ADMI.002 reportam 
-erros de processamento que n&#xE3;o implicam a rejei&#xE7;&#xE3;o da opera&#xE7;&#xE3;o em curso, de forma que 
-uma nova mensagem pode corrigir o problema e efetivar a opera&#xE7;&#xE3;o.</p>
-<p>Al&#xE9;m disso, as requisi&#xE7;&#xF5;es efetuadas pelas mensagens CAMT.060 podem, em caso de 
-inconsist&#xEA;ncias negociais, ser respondidas com mensagens ADMI.002.</p>
-<table>
-<thead>
-<tr>
-<th>N&#xED;vel</th>
-<th>MessageElement/BuildingBlock<code>&lt;XML Tag&gt;</code></th>
-<th>Nome no Brasil</th>
-<th>Mult.</th>
-<th>Mult.Brasil    Type</th>
-<th>Tamanho no Brasil</th>
-<th>Defini&#xE7;&#xE3;o</th>
-<th>Coment&#xE1;rios</th>
-<th>Regra para o Brasil</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td><code>&lt;admi.002.001.01&gt;</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 
                                 
                                 </section>
@@ -313,14 +297,10 @@ inconsist&#xEA;ncias negociais, ser respondidas com mensagens ADMI.002.</p>
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: About">
+                <a href="../chap01/XSD.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: XSD">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="admi.002_SPI_M_msg.html" class="navigation navigation-next " aria-label="Next page: ADMI.002_SPI_M">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -329,7 +309,7 @@ inconsist&#xEA;ncias negociais, ser respondidas com mensagens ADMI.002.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMI","level":"2.1","depth":1,"next":{"title":"ADMI.002_SPI_M","level":"2.2","depth":1,"path":"chap01/admi.002_SPI_M_msg.md","ref":"./chap01/admi.002_SPI_M_msg.md","articles":[]},"previous":{"title":"About","level":"1.1","depth":1,"path":"README.md","ref":"./README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap01/1-1.md","mtime":"2022-03-20T21:10:17.480Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-20T21:28:18.747Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2-1","level":"3.1","depth":1,"previous":{"title":"XSD","level":"2.4","depth":1,"path":"chap01/XSD.md","ref":"./chap01/XSD.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap02/2-1.md","mtime":"2022-03-20T22:11:59.457Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-20T22:12:20.377Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
