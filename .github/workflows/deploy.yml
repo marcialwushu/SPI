@@ -1,4 +1,4 @@
-name: 'deploy website and ebooks'
+name: 'deploy website and gitbooks'
 
 on:
   push:
